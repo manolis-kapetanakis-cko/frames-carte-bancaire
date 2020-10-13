@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Frames v2: Single Frame</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Payment Options -->
+    <div id="payment-options">
+      <div class="payment-option">
+        <input type="radio" id="carte-bancaire" name="payment"
+          value="carte-bancaire" onclick="paymentOption('bancaire')">
+        <label for="carte-bancaire">Pay with <i>Carte Bancaire</i></label>
+        <img src="img/cb.svg" alt="carte-bancaire">
+      </div>
+      <div class="payment-option">
+        <input type="radio" id="cards" name="payment" value="cards"
+          onclick="paymentOption('cards')">
+        <label for="cards">Pay with <i>Credit/Debit Card</i></label>
+        <img src="img/visa.svg" alt="carte-bancaire">
+        <img src="img/mastercard.svg" alt="carte-bancaire">
+        <img src="img/amex.svg" alt="carte-bancaire">
+      </div>
+      <hr>
+    </div>
+
+
+    <!-- Payment Forms -->
+    <form id="payment-form" method="POST" class="hide"
+      action="https://merchant.com/charge-card">
+      <div class="one-liner">
+        <div class="card-frame"></div>
+        <button id="pay-button" disabled>
+          PAY GBP 24.99
+        </button>
+      </div>
+      <p class="error-message"></p>
+      <p class="success-payment-message"></p>
+    </form>
+
+    <script src="https://cdn.checkout.com/js/framesv2.min.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+
+</html>
